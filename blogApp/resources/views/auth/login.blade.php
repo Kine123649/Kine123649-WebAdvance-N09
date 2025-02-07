@@ -32,18 +32,22 @@
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Quên mk?') }}
+        <div class="d-flex mt-4 justify-content-between">
+            <span>    
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                            {{ __('Không có tk?') }}
                 </a>
-            @endif
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-                    {{ __('Không có tk?') }}
-                </a>
-            <x-primary-button class="ms-3">
-                {{ __('Đăng nhập') }}
-            </x-primary-button>
+                @if (Route::has('password.request'))
+                    <a class="ms-3 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                        {{ __('Quên mk?') }}
+                    </a>
+                @endif
+            </span>
+            <span>
+                <x-primary-button class="ms-3">
+                    {{ __('Đăng nhập') }}
+                </x-primary-button>
+            </span>
         </div>
     </form>
 </x-guest-layout>

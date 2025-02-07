@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\StorepostRequest;
-use App\Http\Requests\UpdatepostRequest;
+use App\Http\Request;
 use App\Models\post;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return response()->json(Post::with('user')->get(), 200);
+        return response()->json(Post::all(), 200);
     }
 
     /**
@@ -47,7 +46,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(post $post)
+    public function show(post $id)
     {
         $post = Post::find($id);
         if (!$post) {
