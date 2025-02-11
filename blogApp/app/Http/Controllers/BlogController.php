@@ -21,12 +21,12 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'body' => 'required|string',
         ]);
-
-        Post::create($request->all());
+        $validatedData['user_id'] = auth()->id();
+        Post::create($validatedData);
 
         return redirect()->route('blog.index')->with('success', 'Post created successfully.');
     }
@@ -45,7 +45,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'body' => 'required|string',
         ]);
 
         $post->update($request->all());

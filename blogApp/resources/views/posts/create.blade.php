@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Post</h1>
+        <h1 class="display-4 fw-bold">Create Post</h1>
         <form action="{{ route('blog.store') }}" method="POST">
             @csrf
             <div class="mb-3">
@@ -10,8 +10,8 @@
                 <input type="text" name="title" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label for="content" class="form-label">Content</label>
-                <textarea name="content" class="form-control" required></textarea>
+                <label for="body" class="form-label">Body</label>
+                <textarea name="body" class="form-control" required></textarea>
             </div>
             <button type="submit" class="btn btn-success">Create</button>
         </form>
