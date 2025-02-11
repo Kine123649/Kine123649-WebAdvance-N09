@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\post;
+use App\Models\User;
 
 class BlogController extends Controller
 {
@@ -57,5 +58,15 @@ class BlogController extends Controller
         $post->delete();
 
         return redirect()->route('blog.index')->with('success', 'Post deleted successfully.');
+    }
+    public function userBlog(User $id)
+    {
+        $posts = $id->posts;
+        if ($id->id == auth()->id()) {
+            return view('posts.userPost', compact('posts'));
+        } 
+        else { 
+            return view('blog.index', compact('posts'));
+        }
     }
 }

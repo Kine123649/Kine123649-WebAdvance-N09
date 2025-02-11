@@ -12,7 +12,8 @@ Route::post('/blog', [BlogController::class, 'store'])->name('blog.store'); // S
 Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blog.show'); // Show single post
 Route::get('/blog/{post}/edit', [BlogController::class, 'edit'])->name('blog.edit'); // Show edit form
 Route::put('/blog/{post}', [BlogController::class, 'update'])->name('blog.update'); // Update post
-Route::delete('/blog/{post}', [BlogController::class, 'destroy'])->name('blog.destroy'); // Delete post
+Route::delete('/blog/{post}', [BlogController::class, 'destroy'])->name('blog.destroy'); // Delete pos
+Route::get('/blog/user/{id}', [BlogController::class, 'userBlog'])->name('blog.user');
 
 Route::get('/', function () {
     return view('dashboard');

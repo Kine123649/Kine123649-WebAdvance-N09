@@ -1,32 +1,30 @@
+<style>
+    .btn-success:hover {
+        background-color: #218838 !important; /* Màu xanh lá đậm hơn khi hover */
+        color: yellow !important; /* Chữ chuyển sang vàng khi hover */
+    }
+</style>
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
-        <h1>Posts</h1>
-        <a href="{{ route('blog.create') }}" class="btn btn-primary">Create New Post</a>
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 @foreach ($posts as $post)
-                    <tr>
-                        <td>{{ $post->title }}</td>
-                        <td>
-                            <a href="{{ route('blog.show', $post) }}" class="btn btn-info">View</a>
-                            <a href="{{ route('blog.edit', $post) }}" class="btn btn-warning">Edit</a>
-                            <form action="{{ route('blog.destroy', $post) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                    <div class="card mb-4 shadow-lg border-2 border-gray-300"> {{-- Viền đậm hơn --}}
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <a href="{{ route('blog.show', $post) }}" class="text-dark text-decoration-none">
+                                    {{ $post->title }}
+                                </a>
+                            </h3>
+                            <p class="text-muted small">Đăng ngày {{ $post->created_at->format('d/m/Y') }}</p>
+                            <p class="card-text">{{ Str::limit($post->body, 150) }}</p>
+                            <a href="{{ route('blog.show', $post) }}" class="btn btn-success btn-sm fw-bold text-dark" style="transition: 0.3s;">Xem chi tiết</a>
+                        </div>
+                    </div>
                 @endforeach
-            </tbody>
-        </table>
+            </div>
+        </div>
     </div>
 @endsection
