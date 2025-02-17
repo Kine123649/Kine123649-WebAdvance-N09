@@ -21,11 +21,11 @@ classDiagram
         +username: string
         +email: string
         +password: string
-        -user_id: int
-        +create(In email: string, password: string, username: string)
-        +read()
-        +update(In email: string, password: string, username: string)
-        +delete()
+        +user_id: int
+        -create(In email: string, password: string, username: string)
+        -read()
+        -update(In email: string, password: string, username: string)
+        -delete()
     }
 
     class Post {
@@ -33,10 +33,10 @@ classDiagram
         +user_id: int
         +title: string
         +body: string
-        +create(In title: string, body: string)
-        +read(In post_id: int)
-        +update(In title: string, body: string)
-        +delete(In post_id: int)
+        -create(In title: string, body: string)
+        -read(In post_id: int)
+        -update(In title: string, body: string)
+        -delete(In post_id: int)
     }
      User "1" --> "*" Post : creates
 ```
