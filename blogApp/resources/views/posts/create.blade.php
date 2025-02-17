@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="display-4 fw-bold">Create Post</h1>
-        <form action="{{ route('blog.store') }}" method="POST">
+        <form action="{{ route('blog.store') }}" method="POST" onsubmit="alert('Tạo thành công')">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
