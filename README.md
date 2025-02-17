@@ -1,6 +1,8 @@
 # Kine123649-WebAdvance-N09
 # php artisan serve --port=9763
-# Create Post - Diagrams
+# Thông tin về project:
+    - Là một trang Web cho phép mọi người tạo tài khoản và đăng các bài post với nội dung mong muốn.
+    - Hiện tại đang có các chức năng cơ bản (CRUD) cho user và post.
 
 ## Activity Diagram
 ```mermaid
