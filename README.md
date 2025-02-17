@@ -4,7 +4,7 @@
     - Là một trang Web cho phép mọi người tạo tài khoản và đăng các bài post với nội dung mong muốn.
     - Hiện tại đang có các chức năng cơ bản (CRUD) cho user và post.
 
-## Activity Diagram
+## Activity Diagram (Ví dụ cho chức năng create)
 ```mermaid
 flowchart TD
   A[User] -->|Open Create Post Page| B[Enter Post Details];
