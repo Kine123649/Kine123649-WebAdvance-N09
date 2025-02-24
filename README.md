@@ -4,6 +4,8 @@
     - Là một trang Web cho phép mọi người tạo tài khoản và đăng các bài post với nội dung mong muốn.
     - Hiện tại đang có 2 models là User và Post cùng với các chức năng cơ bản (CRUD).
     - Web-app được xây dựng cơ bản nhưng vẫn đảm bảo tính linh hoạt và khả năng mở rộng trong tương lai.
+    -Link Demo: https://youtu.be/puGSkEoSatw 
+    -Link Web-App: turbo-space-trout-jj56rrvqvxw4hpw5r-9763.app.github.dev 
 
 ## Activity Diagram (Ví dụ cho chức năng create)
 ```mermaid
