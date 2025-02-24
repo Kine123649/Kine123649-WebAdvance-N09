@@ -8,7 +8,7 @@
 ## Activity Diagram (Ví dụ cho chức năng create)
 ```mermaid
 flowchart TD
-  A[User] -->|Open 'Your Posts' Page| --> B[Click on 'Create Post'];
+  A[User] -->|Open 'Your Posts' Page| B[Click on 'Create Post'];
     B --> C[Enter Post details]
     C --> D[Click Submit];
     D --> E{Validation};
