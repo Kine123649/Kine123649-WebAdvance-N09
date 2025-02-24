@@ -11,9 +11,7 @@ flowchart TD
   A[User] -->|Open 'Your Posts' Page| B[Click on 'Create Post'];
     B --> C[Enter Post details]
     C --> D[Click Submit];
-    D --> E{Validation};
-    E -- Success --> F[Save Post to Database];
-    E -- Failure --> G[Show Error Message];
+    D --> F[Save Post to Database];
     F --> H[Display Success Message];
     H --> I[Redirect to 'All Post' Page];
 ```
