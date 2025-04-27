@@ -1,0 +1,16 @@
+{
+    "name": "PHP 8.2 Devcontainer",
+    "image": "php:8.2-cli",
+    "features": {
+      "ghcr.io/devcontainers/features/composer:2": {}
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "felixfbecker.php-intellisense",
+          "junstyle.php-cs-fixer"
+        ]
+      }
+    },
+    "postCreateCommand": "apt-get update && apt-get install -y unzip git libzip-dev libpng-dev libonig-dev libxml2-dev && docker-php-ext-install pdo_mysql mbstring zip exif pcntl"
+  }
